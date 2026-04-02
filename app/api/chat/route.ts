@@ -19,11 +19,21 @@ async function fetchFile(key: string): Promise<string> {
   return res.Body!.transformToString();
 }
 
+let cachedProfile: string | null = null;
+let cachedQa: string | null = null;
+
+async function loadContext(): Promise<{ profile: string; qa: string }> {
+  if (!cachedProfile || !cachedQa) {
+    [cachedProfile, cachedQa] = await Promise.all([
+      fetchFile('data/profile.md'),
+      fetchFile('data/qa.md'),
+    ]);
+  }
+  return { profile: cachedProfile, qa: cachedQa };
+}
+
 export async function POST(req: Request) {
-  const [profile, qa] = await Promise.all([
-    fetchFile('data/profile.md'),
-    fetchFile('data/qa.md'),
-  ]);
+  const { profile, qa } = await loadContext();
 
   const system = `You are a job candidate in a live interview. Answer the interviewer's questions in first person, naturally and confidently.
 
