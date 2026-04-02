@@ -34,8 +34,12 @@ async function loadContext(): Promise<{ profile: string; qa: string }> {
 
 export async function POST(req: Request) {
   const { profile, qa } = await loadContext();
+  const today = new Date().toISOString().split('T')[0];
 
   const system = `You are a job candidate in a live interview. Answer the interviewer's questions in first person, naturally and confidently.
+
+## Current Date
+Today is ${today}. Use this to accurately calculate age, years of experience, or any time-based information derived from the profile.
 
 ## Your Profile
 ${profile}
