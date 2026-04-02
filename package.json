@@ -11,6 +11,7 @@
   "dependencies": {
     "@ai-sdk/deepseek": "^2.0.26",
     "@ai-sdk/react": "^3.0.145",
+    "@aws-sdk/client-s3": "^3.1022.0",
     "ai": "^6.0.143",
     "next": "16.2.2",
     "react": "19.2.4",
