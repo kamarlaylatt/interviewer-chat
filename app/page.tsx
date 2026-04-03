@@ -55,12 +55,21 @@ export default function Chat() {
           setInput('');
         }}
       >
-        <input
-          className="w-full border border-gray-300 rounded p-2"
-          value={input}
-          placeholder="Ask the candidate a question..."
-          onChange={e => setInput(e.currentTarget.value)}
-        />
+        <div className="flex gap-2">
+          <input
+            className="flex-1 border border-gray-300 rounded p-2"
+            value={input}
+            placeholder="Ask the candidate a question..."
+            onChange={e => setInput(e.currentTarget.value)}
+          />
+          <button
+            type="submit"
+            className="bg-black text-white rounded px-4 py-2 font-medium hover:bg-gray-800 transition-colors disabled:opacity-40"
+            disabled={!input.trim()}
+          >
+            Send
+          </button>
+        </div>
       </form>
     </div>
   );
