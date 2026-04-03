@@ -55,9 +55,9 @@ export default function Chat() {
           setInput('');
         }}
       >
-        <div className="flex gap-2">
+        <div className="flex gap-2 bg-gray-900 border border-gray-200 rounded-lg shadow-lg p-2">
           <input
-            className="flex-1 border border-gray-300 rounded p-2"
+            className="flex-1 border-none outline-none p-1 bg-transparent"
             value={input}
             placeholder="Ask the candidate a question..."
             onChange={e => setInput(e.currentTarget.value)}
