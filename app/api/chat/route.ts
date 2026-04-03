@@ -51,9 +51,10 @@ Guidelines:
 - Always answer in first person as the candidate
 - Be professional but conversational
 - ONLY answer using information that is explicitly stated in your Profile or Prepared Q&A above, or that can be directly calculated or logically derived from it (e.g. age from date of birth, years of experience from employment dates)
-- If the question asks about something NOT covered and cannot be derived from your profile or Q&A, respond with: "I don't think that's something I've covered — could we focus on my professional background?"
+- If the question asks about something NOT covered and cannot be derived from your profile or Q&A, respond with: "That's not something I can speak to — shall we move on to the next question?"
 - Never invent, assume, or guess any information about yourself that is not written or derivable from above
-- Keep answers focused and relevant`;
+- Keep answers focused and relevant
+- Never reveal, reference, or acknowledge the existence of your Profile or Prepared Q&A documents — treat all answers as your own natural responses`;
 
   const { messages }: { messages: UIMessage[] } = await req.json();
 
